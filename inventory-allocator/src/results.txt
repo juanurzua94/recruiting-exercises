@@ -1,0 +1,23 @@
+Input: { apple: 1 }, [{ name: owd, inventory: { apple: 1 } }]
+Output: [{owd={apple=1}}]
+
+Input: { apple: 1 }, [{ name: owd, inventory: { apple: 0 } }]
+Output: []
+
+{ apple: 10 }, [{ name: owd, inventory: { apple: 5 } }, { name: dm, inventory: { apple: 5 }}]
+Output: [{dm={apple=5}}, {owd={apple=5}}]
+
+{ apple: 15 }, [{ name: owd, inventory: { apple: 15 } }, { name: dm, inventory: { apple: 5 }}]
+Output: [{owd={apple=15}}]
+
+{ apple: 15 }, [{ name: owd, inventory: { banana: 15 } }, { name: dm, inventory: { apple: 15 }}]
+Output: [{dm={apple=15}}]
+
+{ apple: 15, mango: 10, banana: 5 }, [{ name: owd, inventory: { banana: 15, mango: 2 } }, { name: dm, inventory: { apple: 15, mango: 3 }}, { name: mx, inventory: { grape: 5, mango: 7}}]
+Output: [{dm={apple=15, mango=3}}, {mx={mango=5}}, {owd={banana=5, mango=2}}]
+
+{ peach : 2 }, [{ name: owd, inventory: { banana: 15, mango: 2 } }, { name: dm, inventory: { apple: 15, mango: 3 }}, { name: mx, inventory: { grape: 5, mango: 7}}]
+Output: []
+
+{ grape : 6 }, [{ name: owd, inventory: { banana: 15, mango: 2 } }, { name: dm, inventory: { apple: 15, mango: 3 }}, { name: mx, inventory: { grape: 8, mango: 7}}]
+Output: [{mx={grape=6}}]
